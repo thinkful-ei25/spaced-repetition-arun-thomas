@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import './landing-page.css';
 
 import LoginForm from './login-form';
 
@@ -12,7 +13,11 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome to Foo App</h2>
+            <h2>Welcome to Latency Comparison Numbers!</h2>
+            <p>Learn the latency numbers every programmer should know.</p>
+            <p>Our learning app uses a spaced repetition algorithm that will boost your learning speed.</p>
+            <p>Keep track of your learning history with a built in progress page. </p>
+            <p>Create an account to get started!</p>
             <LoginForm />
             <Link to="/register">Register</Link>
         </div>
