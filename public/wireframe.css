@@ -8,6 +8,7 @@ body {
   font-size: 15px;
   position: relative;
   height: 100%;
+  background: #eeeeee;
 }
 
 .max-wrapper {
@@ -36,8 +37,10 @@ main {
 }
 
 .TopNav {
-  height: 2rem;
-  background: #cccccc;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 1vh 2vw 0 2vw;
 }
 
 .LandingHeader {
@@ -54,6 +57,13 @@ main {
 
 .LandingHeader aside > em {
   font-style: italic;
+}
+
+.Card {
+  background: #ffffff;
+  border-radius: 2px;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 .LoginForm {
@@ -73,10 +83,11 @@ main {
   outline: none;
   margin: 1em auto 0 auto;
   width: 15em;
+  background: inherit;
 }
 
 .LoginForm > input::placeholder {
-  color: #aaaaaa;
+  color: #999999;
 }
 
 .LoginForm__buttonBlock .button {
