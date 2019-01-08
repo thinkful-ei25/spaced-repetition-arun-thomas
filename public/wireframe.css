@@ -6,6 +6,14 @@ html * {
 
 body {
   font-size: 15px;
+  position: relative;
+  height: 100%;
+}
+
+.max-wrapper {
+  min-height: 100vh;
+  padding-bottom: 1em;
+  position: relative;
 }
 
 footer {
@@ -15,7 +23,6 @@ footer {
   left: 0;
   right: 0;
   font-size: 0.66rem;
-  background: #cccccc;
   height: 1rem;
   align-items: center;
   justify-content: center;
