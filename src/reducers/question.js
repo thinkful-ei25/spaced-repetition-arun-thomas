@@ -3,14 +3,16 @@ import {
   FETCH_QUESTION_ERROR,
   POST_QUESTION_SUCCESS,
   POST_QUESTION_REQUEST,
-  POST_QUESTION_ERROR
+  POST_QUESTION_ERROR,
+  STORE_LAST_ANSWER,
 } from '../actions/question';
 
 const initialState = {
   question: {text: ''},
   error: null,
   loading: false,
-  feedback: null
+  feedback: null,
+  previousAnswer: null,
 };
 
 export default function reducer(state = initialState, action) {
@@ -38,6 +40,10 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       error: action.error
     });
+  } else if (action.type === STORE_LAST_ANSWER) {
+    const { answer: previousAnswer } = action;
+    return { ...state, previousAnswer };
   }
+
   return state;
 }

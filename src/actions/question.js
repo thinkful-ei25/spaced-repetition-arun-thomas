@@ -32,8 +32,16 @@ export const postQuestionError = error => ({
   error
 });
 
+export const STORE_LAST_ANSWER = 'STORE_LAST_ANSWER';
+export const storeLastAnswer = (answer) => ({
+  type: STORE_LAST_ANSWER,
+  answer,
+});
+
 export const postQuestion = (answer) => (dispatch, getState) => {
   dispatch(postQuestionRequest());
+  dispatch(storeLastAnswer(answer));
+
   const authToken = getState().auth.authToken;
   return (
     fetch(`${API_BASE_URL}/question`, {
