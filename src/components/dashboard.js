@@ -18,10 +18,7 @@ export class Dashboard extends React.Component {
     render() {
         const { feedback, sessionCorrect, sessionIncorrect, currentStreak } = this.props;
         let total = sessionCorrect + sessionIncorrect;
-        let percentage = (sessionCorrect * 100 / total).toFixed(2);
-        if (isNaN(percentage) === true) {
-            percentage = 0;
-        }
+        let percentage = ((sessionCorrect * 100 / total) || 0).toFixed(2);
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
