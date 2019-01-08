@@ -20,7 +20,8 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       question: action.question,
       error: null,
-      feedback: null
+      feedback: null,
+      prevousAnswer: null,
     });
   } else if (action.type === FETCH_QUESTION_ERROR) {
     return Object.assign({}, state, {
