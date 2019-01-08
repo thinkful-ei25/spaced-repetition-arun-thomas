@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
+import AnswerFeedback from './answer-feedback';
 import AnswerForm from './answer-form';
 import './dashboard.css';
 
@@ -31,6 +32,7 @@ export class Dashboard extends React.Component {
                     <h2>Question:</h2>
                     <p>{this.props.question.text}</p>
                 </div>
+                <AnswerFeedback />
                 <AnswerForm />
             </div>
         );
