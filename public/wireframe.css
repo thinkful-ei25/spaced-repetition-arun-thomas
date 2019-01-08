@@ -1,0 +1,107 @@
+html * {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  font-size: 15px;
+}
+
+footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0.66rem;
+  background: #cccccc;
+  height: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+.CopyrightNotice {
+}
+
+.TopNav {
+  height: 2rem;
+  background: #cccccc;
+}
+
+.LandingHeader {
+  text-align: center;
+}
+
+.LandingHeader h1 {
+  font-size: 3rem;
+}
+
+.LandingHeader aside {
+  margin-top: 1rem;
+}
+
+.LandingHeader aside > em {
+  font-style: italic;
+}
+
+.LoginForm {
+  padding: 1vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.LoginForm > input {
+  display: block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 0.1rem grey;
+  outline: none;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+.LoginForm__buttonBlock {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.LoginForm__buttonBlock .button {
+  margin: 1em
+}
+
+.LoginForm > input:focus {
+  border-color: #0051a3;
+  transition: 0.5s;
+}
+
+.button {
+  font-size: 0.66rem;
+  text-decoration: none;
+  border: none;
+  background: #0051a3;
+  color: #eeeeee;
+  padding: 0.5em 1em;
+  border: solid 2px #0051a3;
+  border-radius: 4px;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  background: #0078f2;
+  border: solid 2px #0078f2;
+  transition: 0.25s;
+}
+
+.button:active {
+  border-bottom: solid 2px #0051a3;
+}
