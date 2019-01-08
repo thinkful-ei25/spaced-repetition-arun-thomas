@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
 import AnswerFeedback from './answer-feedback';
 import AnswerForm from './answer-form';
@@ -9,7 +8,6 @@ import './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchProtectedData());
         this.props.dispatch(fetchQuestion());
     }
 
@@ -44,7 +42,6 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data,
         question: state.question.question
     };
 };
