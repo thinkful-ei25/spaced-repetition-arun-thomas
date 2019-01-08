@@ -32,6 +32,16 @@ export const postQuestionError = error => ({
   error
 });
 
+export const SESSION_CORRECT_INCREMENT = 'SESSION_CORRECT_INCREMENT';
+export const sessionCorrectIncrement = () => ({
+  type: SESSION_CORRECT_INCREMENT
+});
+
+export const SESSION_INCORRECT_INCREMENT = 'SESSION_INCORRECT_INCREMENT';
+export const sessionIncorrectIncrement = () => ({
+  type: SESSION_INCORRECT_INCREMENT
+})
+
 export const postQuestion = (answer) => (dispatch, getState) => {
   dispatch(postQuestionRequest());
   const authToken = getState().auth.authToken;
@@ -49,8 +59,16 @@ export const postQuestion = (answer) => (dispatch, getState) => {
     })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then((res) => dispatch(postQuestionSuccess(res)))
+    .then((res) => {
+      dispatch(postQuestionSuccess(res))
+      if (res.feedback.correct === true) {
+        dispatch(sessionCorrectIncrement())
+      } else {
+        dispatch(sessionIncorrectIncrement())
+      }
+    })
     .catch(err => {
+        console.error(err);
         dispatch(postQuestionError(err));
     })  
   );
