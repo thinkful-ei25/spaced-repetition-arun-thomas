@@ -22,6 +22,11 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
+                <div className='scoreboard'>
+                    <span><b>Session Score:</b> 0</span> 
+                    <span><b>Current Streak:</b> 0</span>
+                    <span><b>Percent Correct:</b> 0%</span>
+                </div>
                 <div>
                     <h2>Question:</h2>
                     <p>{this.props.question.text}</p>

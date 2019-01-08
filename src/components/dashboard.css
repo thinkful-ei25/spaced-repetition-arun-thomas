@@ -1,3 +1,10 @@
 .dashboard {
   margin: 20px;
 }
+
+.scoreboard {
+  margin-top: 20px;
+}
+.scoreboard span {
+  margin-left: 15px;
+}
