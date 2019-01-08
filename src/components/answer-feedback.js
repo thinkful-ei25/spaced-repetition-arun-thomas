@@ -10,7 +10,7 @@ export function AnswerFeedback({ feedback, question, fetchQuestion }) {
   }
 
   return (
-    <div class="answer-feedback">
+    <div className="answer-feedback">
       <h2>{feedback.correct ? 'Correct!' : 'Incorrect'}</h2>
       {!feedback.correct && (
         <div className="correct-answer">

@@ -13,6 +13,49 @@ export const fetchQuestionError = error => ({
   error
 });
 
+
+export const POST_QUESTION_REQUEST = 'POST_QUESTION_REQUEST';
+export const postQuestionRequest = () => ({
+  type: POST_QUESTION_REQUEST
+});
+
+export const POST_QUESTION_SUCCESS = 'POST_QUESTION_SUCCESS';
+export const postQuestionSuccess = ({question, feedback}) => ({
+  type: POST_QUESTION_SUCCESS,
+  question,
+  feedback
+});
+
+export const POST_QUESTION_ERROR = 'POST_QUESTION_ERROR';
+export const postQuestionError = error => ({
+  type: POST_QUESTION_ERROR,
+  error
+});
+
+export const postQuestion = (answer) => (dispatch, getState) => {
+  dispatch(postQuestionRequest());
+  const authToken = getState().auth.authToken;
+  return (
+    fetch(`${API_BASE_URL}/question`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${authToken}`
+      },
+      body: JSON.stringify({
+        answer,
+        question: {id: getState().question.question.id}
+      })
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then((res) => dispatch(postQuestionSuccess(res)))
+    .catch(err => {
+        dispatch(postQuestionError(err));
+    })  
+  );
+}
+
 export const fetchQuestion = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/question`, {

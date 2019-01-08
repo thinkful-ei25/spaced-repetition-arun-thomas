@@ -3,10 +3,12 @@ import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { required, nonEmpty } from '../validators';
 import './answer-form.css';
+import { postQuestion } from '../actions/question';
 
 export class AnswerForm extends React.Component {
   onSubmit(value) {
-    console.log('user answer', value);
+    console.log(value.useranswer)
+    this.props.dispatch(postQuestion(value.useranswer));
   }
 
   render() {
