@@ -16,16 +16,20 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        const { feedback } = this.props;
+        const { feedback, sessionCorrect, sessionIncorrect } = this.props;
+        let percentage = (sessionCorrect * 100 / (sessionCorrect + sessionIncorrect)).toFixed(2);
+        if (isNaN(percentage) === true) {
+            percentage = 0;
+        }
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
                 <div className='scoreboard'>
-                    <span><b>Session Score:</b> 0</span> 
+                    <span><b>Session Score:</b> {sessionCorrect}</span> 
                     <span><b>Current Streak:</b> 0</span>
-                    <span><b>Percent Correct:</b> 0%</span>
+                    <span><b>Percent Correct:</b> {percentage}%</span>
                 </div>
                 <div>
                     <h2>Question:</h2>
@@ -44,6 +48,8 @@ const mapStateToProps = state => {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         question: state.question.question,
         feedback: state.question.feedback,
+        sessionCorrect: state.question.sessionCorrect,
+        sessionIncorrect: state.question.sessionIncorrect
     };
 };
 
