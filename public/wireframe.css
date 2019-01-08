@@ -59,30 +59,28 @@ main {
 .LoginForm {
   padding: 1vh;
   margin: 0 auto;
+  margin-top: 1em;
   text-align: center;
 }
 
 .LoginForm > input {
+  font-size: 0.75rem;
   display: block;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: solid 0.1rem grey;
   outline: none;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20em;
+  margin: 1em auto 0 auto;
+  width: 15em;
 }
 
-.LoginForm__buttonBlock {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+.LoginForm > input::placeholder {
+  color: #aaaaaa;
 }
 
 .LoginForm__buttonBlock .button {
-  margin: 1em
+  margin: 1em;
 }
 
 .LoginForm > input:focus {
@@ -91,7 +89,8 @@ main {
 }
 
 .button {
-  font-size: 0.66rem;
+  display: inline-block;
+  font-size: 0.8rem;
   text-decoration: none;
   border: none;
   background: #0051a3;
@@ -99,6 +98,7 @@ main {
   padding: 0.5em 1em;
   border: solid 2px #0051a3;
   border-radius: 4px;
+  line-height: 1rem;
 }
 
 .button:hover,
