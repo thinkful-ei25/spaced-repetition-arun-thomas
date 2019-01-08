@@ -16,6 +16,7 @@ export class Dashboard extends React.Component {
     }
 
     render() {
+        const { feedback } = this.props;
         return (
             <div className="dashboard">
                 <div className="dashboard-username">
@@ -30,8 +31,7 @@ export class Dashboard extends React.Component {
                     <h2>Question:</h2>
                     <p>{this.props.question.text}</p>
                 </div>
-                <AnswerFeedback />
-                <AnswerForm />
+                {feedback ? <AnswerFeedback /> : <AnswerForm />}
             </div>
         );
     }
@@ -42,7 +42,8 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        question: state.question.question
+        question: state.question.question,
+        feedback: state.question.feedback,
     };
 };
 

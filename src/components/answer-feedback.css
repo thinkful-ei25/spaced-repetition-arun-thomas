@@ -1,0 +1,7 @@
+.previous-response--correct {
+  color: green;
+}
+
+.previous-response--incorrect {
+  color: red;
+}
