@@ -16,7 +16,8 @@ const initialState = {
   feedback: null,
   previousAnswer: null,
   sessionCorrect: 0,
-  sessionIncorrect: 0
+  sessionIncorrect: 0,
+  currentStreak: 0,
 };
 
 export default function reducer(state = initialState, action) {
@@ -50,11 +51,13 @@ export default function reducer(state = initialState, action) {
     return { ...state, previousAnswer };
   } else if (action.type === SESSION_CORRECT_INCREMENT) {
     return Object.assign({}, state, {
-      sessionCorrect: state.sessionCorrect + 1
+      sessionCorrect: state.sessionCorrect + 1,
+      currentStreak: state.currentStreak + 1
     })
   } else if (action.type === SESSION_INCORRECT_INCREMENT) {
     return Object.assign({}, state, {
-      sessionIncorrect: state.sessionIncorrect + 1
+      sessionIncorrect: state.sessionIncorrect + 1,
+      currentStreak: 0
     })
   }
 
