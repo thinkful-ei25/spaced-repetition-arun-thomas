@@ -1,0 +1,33 @@
+.Button {
+  display: inline-block;
+  padding: 0.5em 1em;
+
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1rem;
+
+  color: #eeeeee;
+
+  border: solid 2px;
+  border-radius: 4px;
+
+  margin: 0.5em;
+}
+
+.Button:hover,
+.Button:focus {
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.Button--default {
+  background: #0051a3;
+  border-color: #0051a3;
+}
+
+.Button--default:hover,
+.Button--default:focus {
+  background: #0078f2;
+  border-color: #0078f2;
+}

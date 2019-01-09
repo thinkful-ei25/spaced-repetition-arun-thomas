@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {connect} from 'react-redux';
-import {Route, withRouter} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
 
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import History from './history';
-import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -41,13 +40,14 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <Fragment>
                 <HeaderBar />
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/register" component={RegistrationPage} />
-                <Route exact path="/history" component={History} />
-            </div>
+                <Switch>
+                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/history" component={History} />
+                    <Route component={LandingPage} />
+                </Switch>
+            </Fragment>
         );
     }
 }

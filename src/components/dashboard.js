@@ -21,9 +21,6 @@ export class Dashboard extends React.Component {
         let percentage = ((sessionCorrect * 100 / total) || 0).toFixed(2);
         return (
             <div className="dashboard">
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
                 <div className='scoreboard'>
                     <span><b>Session Score:</b> {sessionCorrect} / {total}</span> 
                     <span><b>Current Streak:</b> {currentStreak}</span>

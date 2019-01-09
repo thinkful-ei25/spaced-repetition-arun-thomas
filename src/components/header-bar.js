@@ -1,27 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+import './header-bar.css';
+import Button from './button';
 import { logout as logoutAction } from '../actions/auth';
 
-export function HeaderBar({ logout, loggedIn }) {
+export function HeaderBar({ logout, user }) {
   // Only render the log out button if we are logged in
   let logOutButton;
-  if (loggedIn) {
-    logOutButton = <button onClick={() => logout()}>Log out</button>;
+  let name;
+  if (user) {
+    logOutButton = <Button onClick={() => logout()}>Log out</Button>;
+    name = [user.firstName, user.lastName].join(' ') || user.username;
   }
+
   return (
-    <div className="header-bar">
-      <h1>Latency Comparison Numbers</h1>
+    <nav className="HeaderBar">
+      <NavLink
+        to="/dashboard"
+        className="HeaderBar_link"
+        activeClassName="HeaderBar_link--active"
+      >
+        {name}
+      </NavLink>
       {logOutButton}
-    </div>
+    </nav>
   );
 }
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.auth.currentUser !== null,
+  user: state.auth.currentUser,
 });
 
 const mapDispatchToProps = {
   logout: logoutAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderBar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HeaderBar);
