@@ -3,7 +3,8 @@
   padding: 0.5em 1em;
 
   font-size: 0.8rem;
-  font-weight: bolder;
+  font-family: inherit;
+  font-weight: 600;
   line-height: 1rem;
 
   color: #eeeeee;

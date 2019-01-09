@@ -7,6 +7,10 @@
   background-color: lightskyblue;
 }
 
+.HeaderBar_link {
+  font-weight: 600;
+}
+
 .HeaderBar_link--active {
   color: inherit;
   text-decoration: none;
