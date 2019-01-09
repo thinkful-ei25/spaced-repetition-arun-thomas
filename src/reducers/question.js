@@ -7,13 +7,10 @@ import {
   STORE_LAST_ANSWER,
   SESSION_CORRECT_INCREMENT,
   SESSION_INCORRECT_INCREMENT,
-<<<<<<< HEAD
   RESET_QUESTION_STATE,
-=======
   QUESTION_HISTORY_REQUEST,
   QUESTION_HISTORY_SUCCESS,
   QUESTION_HISTORY_ERROR
->>>>>>> features/question-history
 } from '../actions/question';
 
 const initialState = {
