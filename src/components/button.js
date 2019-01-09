@@ -3,7 +3,7 @@ import React from 'react';
 
 import './button.css';
 
-export const TYPES = {
+export const STYLES = {
   DEFAULT: 'default',
   SUCCESS: 'succeess',
   WARNING: 'warning',
@@ -13,12 +13,12 @@ export const TYPES = {
 export default function Button({
   children,
   className: classNameProp,
-  type,
+  style,
   ...remainingProps
 }) {
   const className = classNames(
     'Button',
-    { [`Button--${TYPES[type || 'DEFAULT']}`]: true },
+    { [`Button--${STYLES[style || 'DEFAULT']}`]: true },
     classNameProp
   );
 
