@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
@@ -40,12 +40,12 @@ export class App extends React.Component {
 
     render() {
         return (
-            <div className="app">
+            <Fragment>
                 <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
-            </div>
+            </Fragment>
         );
     }
 }
