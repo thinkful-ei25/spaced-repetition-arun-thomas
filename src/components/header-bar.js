@@ -23,13 +23,13 @@ export function HeaderBar({ logout, user }) {
         activeClassName="HeaderBar_link--active"
       >
         {name}
-        <NavLink
-          to="/history"
-          className="HeaderBar_link"
-          activeClassName="HeaderBar_link--active"
-        >
-          History
-        </NavLink>
+      </NavLink>
+      <NavLink
+        to="/history"
+        className="HeaderBar_link"
+        activeClassName="HeaderBar_link--active"
+      >
+        History
       </NavLink>
       {logOutButton}
     </nav>
