@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 
 import Button from './button';
@@ -21,8 +22,9 @@ export class LoginForm extends React.Component {
             );
         }
         return (
+            <div className="LoginForm">
             <form
-                className="login-form"
+                className="LoginForm_form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -47,6 +49,8 @@ export class LoginForm extends React.Component {
                     Log in
                 </Button>
             </form>
+            <Link to="/register">Register</Link>
+            </div>
         );
     }
 }
