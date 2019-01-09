@@ -1,0 +1,13 @@
+.HeaderBar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1vh 2vw;
+  background-color: lightskyblue;
+}
+
+.HeaderBar_link--active {
+  color: inherit;
+  text-decoration: none;
+}
