@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import './header-bar.css';
+import Button from './button';
 import { logout as logoutAction } from '../actions/auth';
 
 export function HeaderBar({ logout, user }) {
@@ -10,7 +11,7 @@ export function HeaderBar({ logout, user }) {
   let logOutButton;
   let name;
   if (user) {
-    logOutButton = <button onClick={() => logout()}>Log out</button>;
+    logOutButton = <Button onClick={() => logout()}>Log out</Button>;
     name = [user.firstName, user.lastName].join(' ') || user.username;
   }
 

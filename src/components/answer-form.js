@@ -1,8 +1,10 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
+
+import './answer-form.css';
+import Button from './button';
 import Input from './input';
 import { required, nonEmpty } from '../validators';
-import './answer-form.css';
 import { postQuestion } from '../actions/question';
 
 export class AnswerForm extends React.Component {
@@ -27,9 +29,9 @@ export class AnswerForm extends React.Component {
           autocomplete="off"
           validate={[required, nonEmpty]}
         />
-        <button disabled={this.props.pristine || this.props.submitting}>
+        <Button disabled={this.props.pristine || this.props.submitting}>
           Submit
-        </button>
+        </Button>
       </form>
     );
   }
