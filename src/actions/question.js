@@ -46,7 +46,41 @@ export const sessionCorrectIncrement = () => ({
 export const SESSION_INCORRECT_INCREMENT = 'SESSION_INCORRECT_INCREMENT';
 export const sessionIncorrectIncrement = () => ({
   type: SESSION_INCORRECT_INCREMENT
-})
+});
+
+export const QUESTION_HISTORY_REQUEST = 'QUESTION_HISTORY_REQUEST';
+export const questionHistoryRequest = () => ({
+  type: QUESTION_HISTORY_REQUEST
+});
+
+export const QUESTION_HISTORY_SUCCESS = 'QUESTION_HISTORY_SUCCESS';
+export const questionHistorySuccess = (questionHistory) => ({
+  type: QUESTION_HISTORY_SUCCESS,
+  questionHistory
+});
+
+export const QUESTION_HISTORY_ERROR = 'QUESTION_HISTORY_ERROR';
+export const questionHistoryError = (error) => ({
+  type: QUESTION_HISTORY_ERROR,
+  error
+});
+
+export const fetchQuestionHistory = () => (dispatch, getState) => {
+  dispatch(questionHistoryRequest());
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/history`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+  .then(res => normalizeResponseErrors(res))
+  .then(res => res.json())
+  .then(({questions}) => dispatch(questionHistorySuccess(questions)))
+  .catch(err => {
+      dispatch(questionHistoryError(err));
+  });
+}
 
 export const postQuestion = (answer) => (dispatch, getState) => {
   dispatch(postQuestionRequest());
