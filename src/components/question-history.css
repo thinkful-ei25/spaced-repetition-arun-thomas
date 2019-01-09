@@ -1,0 +1,11 @@
+.questionHistory {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.question-text {
+  display: inline-block;
+}
+
+.history-score {
+  float: right;
+}

@@ -7,7 +7,13 @@ import {
   STORE_LAST_ANSWER,
   SESSION_CORRECT_INCREMENT,
   SESSION_INCORRECT_INCREMENT,
+<<<<<<< HEAD
   RESET_QUESTION_STATE,
+=======
+  QUESTION_HISTORY_REQUEST,
+  QUESTION_HISTORY_SUCCESS,
+  QUESTION_HISTORY_ERROR
+>>>>>>> features/question-history
 } from '../actions/question';
 
 const initialState = {
@@ -19,6 +25,7 @@ const initialState = {
   sessionCorrect: 0,
   sessionIncorrect: 0,
   currentStreak: 0,
+  questionHistory: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -62,7 +69,19 @@ export default function reducer(state = initialState, action) {
     })
   } else if (action.type === RESET_QUESTION_STATE) {
     return initialState;
+  } else if (action.type === QUESTION_HISTORY_REQUEST) {
+    return Object.assign ({}, state, {
+      loading: true,
+      error: null
+    })
+  } else if (action.type === QUESTION_HISTORY_SUCCESS) {
+    return Object.assign ({}, state, {
+      questionHistory: action.questionHistory
+    })
+  } else if (action.type === QUESTION_HISTORY_ERROR) {
+    return Object.assign ({}, state, {
+      error: action.error
+    })
   }
-
   return state;
 }
