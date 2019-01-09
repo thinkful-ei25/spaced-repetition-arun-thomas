@@ -46,7 +46,12 @@ export const sessionCorrectIncrement = () => ({
 export const SESSION_INCORRECT_INCREMENT = 'SESSION_INCORRECT_INCREMENT';
 export const sessionIncorrectIncrement = () => ({
   type: SESSION_INCORRECT_INCREMENT
-})
+});
+
+export const RESET_QUESTION_STATE = 'RESET_QUESTION_STATE';
+export const resetQuestionState = () => ({
+  type: RESET_QUESTION_STATE,
+});
 
 export const postQuestion = (answer) => (dispatch, getState) => {
   dispatch(postQuestionRequest());

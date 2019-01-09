@@ -6,7 +6,8 @@ import {
   POST_QUESTION_ERROR,
   STORE_LAST_ANSWER,
   SESSION_CORRECT_INCREMENT,
-  SESSION_INCORRECT_INCREMENT
+  SESSION_INCORRECT_INCREMENT,
+  RESET_QUESTION_STATE,
 } from '../actions/question';
 
 const initialState = {
@@ -59,6 +60,8 @@ export default function reducer(state = initialState, action) {
       sessionIncorrect: state.sessionIncorrect + 1,
       currentStreak: 0
     })
+  } else if (action.type === RESET_QUESTION_STATE) {
+    return initialState;
   }
 
   return state;
