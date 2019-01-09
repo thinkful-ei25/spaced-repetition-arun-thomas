@@ -4,6 +4,7 @@ import { SubmissionError } from 'redux-form';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 import { saveAuthToken, clearAuthToken } from '../local-storage';
+import { resetQuestionState } from "../actions/question";
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = (authToken) => ({
@@ -99,4 +100,10 @@ export const refreshAuthToken = () => (dispatch, getState) => {
       dispatch(clearAuth());
       clearAuthToken(authToken);
     });
+};
+
+export const logout = () => (dispatch) => {
+  dispatch(clearAuth());
+  clearAuthToken();
+  dispatch(resetQuestionState());
 };
