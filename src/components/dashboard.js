@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import { fetchQuestion } from '../actions/question';
+import { fetchQuestion, fetchSessionId } from '../actions/question';
 import AnswerFeedback from './answer-feedback';
 import AnswerForm from './answer-form';
 import './dashboard.css';
@@ -9,6 +9,11 @@ import './dashboard.css';
 export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchQuestion());
+        if (!this.props.session) {
+            this.props.dispatch(fetchSessionId());
+        } else {
+            console.log(this.props.session.id)
+        }
     }
 
     onSubmit(value) {
@@ -46,6 +51,7 @@ const mapStateToProps = state => {
         sessionCorrect: state.question.sessionCorrect,
         sessionIncorrect: state.question.sessionIncorrect,
         currentStreak: state.question.currentStreak,
+        session: state.question.currentSession
     };
 };
 
