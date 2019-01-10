@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './landing-page.css';
 
+import Card from './card';
 import LoginForm from './login-form';
 import RegistrationForm from './registration-form';
 
@@ -30,22 +31,22 @@ export function LandingPage(props) {
         </div>
       </header>
 
-      <section className="LandingPage_features">
+      <Card className="LandingPage_features" element="section">
         <ul className="LandingPage_ul">
           <li className="LandingPage_feature">
             Use spaced repetition to boost your learning speed
           </li>
           <li className="LandingPage_feature">Track your progress over time</li>
         </ul>
-      </section>
+      </Card>
 
-      <section className="LandingPage_login">
+      <Card element="section" className="LandingPage_login">
         <h2>Login to get started</h2>
         <Switch>
           <Route path="/register" component={RegistrationForm} />
           <Route component={LoginForm} />
         </Switch>
-      </section>
+      </Card>
     </main>
   );
 }
