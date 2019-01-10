@@ -30,10 +30,14 @@ export function LandingPage(props) {
         </div>
       </header>
 
-      <ul className="LandingPage_about_features">
-        <li>Use spaced repetition to boost your learning speed</li>
-        <li>Track your progress over time</li>
-      </ul>
+      <section className="LandingPage_features">
+        <ul className="LandingPage_ul">
+          <li className="LandingPage_feature">
+            Use spaced repetition to boost your learning speed
+          </li>
+          <li className="LandingPage_feature">Track your progress over time</li>
+        </ul>
+      </section>
 
       <section className="LandingPage_login">
         <h2>Login to get started</h2>
