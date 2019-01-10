@@ -30,9 +30,11 @@
 .LandingPage_imageContainer {
   flex: 1;
 }
+
 .LandingPage_image {
+  display: block;
   max-height: 30vh;
-  max-width: 100%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -43,10 +45,11 @@
   }
 
   .LandingPage_titles {
-    margin-right: 1rem;
+    margin-right: 10vw;
   }
 
   .LandingPage_image {
     max-height: initial;
+    max-width: 100%;
   }
 }
