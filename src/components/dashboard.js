@@ -11,10 +11,6 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchQuestion());
     }
 
-    onSubmit(value) {
-        console.log('user answer', value);
-    }
-
     render() {
         const { feedback, sessionCorrect, sessionIncorrect, currentStreak } = this.props;
         let total = sessionCorrect + sessionIncorrect;

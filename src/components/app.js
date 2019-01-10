@@ -39,9 +39,11 @@ export class App extends React.Component {
     }
 
     render() {
+        const { location } = this.props;
         return (
             <Fragment>
-                <HeaderBar />
+                {/* Pass location to prevent update blocking */}
+                <HeaderBar location={location} />
                 <Switch>
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/history" component={History} />
