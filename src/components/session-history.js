@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import './history.css';
+import './session-history.css';
 import { Link } from 'react-router-dom';
 import { fetchSessionHistory } from '../actions/session-history';
 import SessionData from './session-data';

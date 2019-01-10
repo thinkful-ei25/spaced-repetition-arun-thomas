@@ -10,8 +10,8 @@ export default class DisplayTime extends React.Component {
     let elapsed = moment(endTime).diff(startTime, 'minutes')
     return(
       <div>
-        <div><b>Session Start:</b> {startTime}</div>
-        <div><b>Session Length:</b> {elapsed} minutes</div>
+        <h3>{startTime}</h3>
+        <div>Session Length: {elapsed} minutes</div>
       </div>
     );
   }

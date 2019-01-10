@@ -1,6 +1,7 @@
 import React from 'react';
 import DisplayTime from './display-time';
 import './session-data.css';
+import SessionChart from './session-chart';
 
 export default class SessionData extends React.Component {
   render() {
@@ -10,10 +11,7 @@ export default class SessionData extends React.Component {
     return(
       <div className="session-data">
         <DisplayTime className='session-time' createdAt={createdAt} updatedAt={updatedAt}/>
-        <div className='session-correct'><b>Correct:</b> {correct}</div>
-        <div><b>Incorrect:</b> {incorrect}</div>
-        <div><b>Total Questions:</b> {total}</div>
-        <div><b>Percentage:</b> {percentage}%</div>
+        <SessionChart correct={correct} incorrect={incorrect}/>
       </div>
     );
   }
