@@ -4,14 +4,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2vw;
-  background-color: lightskyblue;
+
+  background-color: var(--color-dark);
 }
 
+.HeaderBar,
 .HeaderBar_link {
-  font-weight: 600;
+  text-decoration: none;
 }
 
-.HeaderBar_link--active {
-  color: inherit;
-  text-decoration: none;
+.HeaderBar,
+.HeaderBar_link,
+.HeaderBar_link:visited {
+  color: var(--color-beige);
+}
+
+.HeaderBar_link--active,
+.HeaderBar_link--active:visited {
+  font-weight: bold;
 }

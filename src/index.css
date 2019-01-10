@@ -1,5 +1,13 @@
 :root {
   --font-family: 'Raleway', sans-serif;
+  --color-primary: #3f88c5;
+  --color-primary-strong: #1f7ac4;
+  --color-success: #44bba4;
+  --color-success-strong: #1dba9a;
+  --color-danger: #e94f37;
+  --color-danger-strong: #e83317;
+  --color-dark: #393e41;
+  --color-beige: #f6f7eb;
 }
 
 html * {

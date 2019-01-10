@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm, focus } from 'redux-form';
 
-import Button from './button';
+import Button, { THEMES as buttonThemes } from './button';
 import Input from './input';
 import statelessWrapper from './stateless-wrapper';
 import { registerUser } from '../actions/users';
@@ -52,7 +52,7 @@ export class RegistrationForm extends React.Component {
             validate={[required, nonEmpty, matchesPassword]}
           />
 
-          <Button type="submit" disabled={this.props.pristine || this.props.submitting}>
+          <Button theme={buttonThemes.SUCCESS} type="submit" disabled={this.props.pristine || this.props.submitting}>
             Register
           </Button>
         </form>

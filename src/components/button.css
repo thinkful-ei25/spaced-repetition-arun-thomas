@@ -22,12 +22,34 @@
 }
 
 .Button--default {
-  background: #0051a3;
-  border-color: #0051a3;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .Button--default:hover,
 .Button--default:focus {
-  background: #0078f2;
-  border-color: #0078f2;
+  background: var(--color-primary-strong);
+  border-color: var(--color-primary-strong);
+}
+
+.Button--danger {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.Button--danger:hover,
+.Button--danger:focus {
+  background: var(--color-danger-strong);
+  border-color: var(--color-danger-strong);
+}
+
+.Button--success {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.Button--success:hover,
+.Button--success:focus {
+  background: var(--color-success-strong);
+  border-color: var(--color-success-strong);
 }
