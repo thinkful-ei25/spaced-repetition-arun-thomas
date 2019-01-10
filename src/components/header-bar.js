@@ -7,13 +7,13 @@ import Button from './button';
 import { logout as logoutAction } from '../actions/auth';
 
 export function HeaderBar({ logout, user }) {
-  // Only render the log out button if we are logged in
-  let logOutButton;
-  let name;
-  if (user) {
-    logOutButton = <Button onClick={() => logout()}>Log out</Button>;
-    name = [user.firstName, user.lastName].join(' ') || user.username;
+  // Only render the top bar if we're logged in
+  if (!user) {
+    return null;
   }
+
+  const logOutButton = <Button onClick={() => logout()}>Log out</Button>;
+  const name = [user.firstName, user.lastName].join(' ') || user.username;
 
   return (
     <nav className="HeaderBar">
