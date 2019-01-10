@@ -4,9 +4,11 @@ import { Field, reduxForm, focus } from 'redux-form';
 
 import Button from './button';
 import Input from './input';
+import statelessWrapper from './stateless-wrapper';
 import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators'; 
+
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches('password');
 
@@ -60,8 +62,13 @@ export class RegistrationForm extends React.Component {
   }
 }
 
-export default reduxForm({
+/* 
+ * It is necessary to wrap our reduxForm component because it uses forwardRefs *
+ * which are not supported by the current verison of React Router.
+ * See: https://github.com/erikras/redux-form/issues/4318
+ */
+export default statelessWrapper(reduxForm({
   form: 'registration',
   onSubmitFail: (errors, dispatch) =>
     dispatch(focus('registration', Object.keys(errors)[0])),
-})(RegistrationForm);
+})(RegistrationForm));
