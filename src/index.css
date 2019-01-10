@@ -10,6 +10,7 @@
   --color-warning-strong: #f98b1d;
   --color-dark: #393e41;
   --color-beige: #f6f7eb;
+  --color-grey: #CDCEC4;
 
   /* Minor third scale */
   --modular-1: 2.074rem;
@@ -33,4 +34,7 @@ body {
 
   position: relative;
   height: 100%;
+
+  background: var(--color-beige);
+  color: var(--color-dark);
 }
