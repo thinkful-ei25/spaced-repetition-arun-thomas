@@ -137,7 +137,8 @@ export const postQuestion = (answer) => (dispatch, getState) => {
       },
       body: JSON.stringify({
         answer,
-        question: {id: getState().question.question.id}
+        question: {id: getState().question.question.id},
+        session: getState().question.currentSession
       })
     })
     .then(res => normalizeResponseErrors(res))
