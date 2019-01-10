@@ -69,6 +69,43 @@ export const questionHistoryError = (error) => ({
   error
 });
 
+
+export const POST_SESSION_REQUEST = 'POST_SESSION_REQUEST';
+export const postSessionRequest = () => ({
+    type: POST_SESSION_REQUEST
+})
+
+export const POST_SESSION_SUCCESS = 'POST_SESSION_SUCCESS';
+export const postSessionSuccess = (res) => ({
+    type: POST_SESSION_SUCCESS,
+    res
+})
+
+export const POST_SESSION_ERROR = 'POST_SESSION_ERROR';
+export const postSessionError = (error) => ({
+    type: POST_SESSION_ERROR,
+    error
+})
+
+export const fetchSessionId = () => (dispatch, getState) => {
+  dispatch(postSessionRequest());
+  const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/users/session`, {
+        method: 'POST',
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+    })
+    .then(res => res.json())
+    .then((res) => dispatch(postSessionSuccess(res)))
+    .catch(err => 
+        dispatch(postSessionError(err))
+    );
+}
+
+
 export const fetchQuestionHistory = () => (dispatch, getState) => {
   dispatch(questionHistoryRequest());
   const authToken = getState().auth.authToken;
