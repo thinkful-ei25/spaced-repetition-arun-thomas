@@ -13,21 +13,36 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="home">
-      <h2>Welcome to Latency Comparison Numbers!</h2>
-      <p>Learn the latency numbers every programmer should know.</p>
-      <p>
-        Our learning app uses a spaced repetition algorithm that will boost your
-        learning speed.
-      </p>
-      <p>Keep track of your learning history with a built in progress page. </p>
-      <p>Create an account to get started!</p>
+    <main className="LandingPage">
+      <header className="LandingPage_header">
+        <div className="LandingPage_titles">
+          <h1 className="LandingPage_title">Spaced Latency</h1>
+          <p className="LandingPage_subtitle">
+            Learn the latency numbers that every programmer should know
+          </p>
+        </div>
+        <div className="LandingPage_imageContainer">
+          <img
+            src="latency-blocks.png"
+            alt="Latency numbers as blocks"
+            className="LandingPage_image"
+          />
+        </div>
+      </header>
 
-      <Switch>
-        <Route path="/register" component={RegistrationForm} />
-        <Route component={LoginForm} />
-      </Switch>
-    </div>
+      <ul className="LandingPage_about_features">
+        <li>Use spaced repetition to boost your learning speed</li>
+        <li>Track your progress over time</li>
+      </ul>
+
+      <section className="LandingPage_login">
+        <h2>Login to get started</h2>
+        <Switch>
+          <Route path="/register" component={RegistrationForm} />
+          <Route component={LoginForm} />
+        </Switch>
+      </section>
+    </main>
   );
 }
 

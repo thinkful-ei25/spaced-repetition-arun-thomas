@@ -6,8 +6,18 @@
   --color-success-strong: #1dba9a;
   --color-danger: #e94f37;
   --color-danger-strong: #e83317;
+  --color-warning: #f99d40;
+  --color-warning-strong: #f98b1d;
   --color-dark: #393e41;
   --color-beige: #f6f7eb;
+
+  /* Minor third scale */
+  --modular-1: 2.074rem;
+  --modular-2: 1.727rem;
+  --modular-3: 1.44rem;
+  --modular-4: 1.2rem;
+  --modular-5: 0.833rem;
+  --modular-6: 0.694rem;
 }
 
 html * {
