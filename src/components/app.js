@@ -6,6 +6,7 @@ import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import History from './history';
+import SessionHistory from './session-history';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -47,6 +48,7 @@ export class App extends React.Component {
                 <Switch>
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/history" component={History} />
+                    <Route exact path="/session-history" component={SessionHistory} />
                     <Route component={LandingPage} />
                 </Switch>
             </Fragment>

@@ -31,6 +31,13 @@ export function HeaderBar({ logout, user }) {
       >
         History
       </NavLink>
+      <NavLink
+        to="/session-history"
+        className="HeaderBar_link"
+        activeClassName="HeaderBar_link--active"
+      >
+        Session History
+      </NavLink>
       {logOutButton}
     </nav>
   );
