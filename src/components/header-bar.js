@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import './header-bar.css';
-import Button from './button';
+import Button, { THEMES as buttonThemes }from './button';
 import { logout as logoutAction } from '../actions/auth';
 
 export function HeaderBar({ logout, user }) {
@@ -12,7 +12,7 @@ export function HeaderBar({ logout, user }) {
     return null;
   }
 
-  const logOutButton = <Button onClick={() => logout()}>Log out</Button>;
+  const logOutButton = <Button theme={buttonThemes.DANGER} onClick={() => logout()}>Log out</Button>;
   const name = [user.firstName, user.lastName].join(' ') || user.username;
 
   return (

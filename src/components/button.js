@@ -3,9 +3,9 @@ import React from 'react';
 
 import './button.css';
 
-export const STYLES = {
+export const THEMES = {
   DEFAULT: 'default',
-  SUCCESS: 'succeess',
+  SUCCESS: 'success',
   WARNING: 'warning',
   DANGER: 'danger',
 };
@@ -13,12 +13,12 @@ export const STYLES = {
 export default function Button({
   children,
   className: classNameProp,
-  style,
+  theme,
   ...remainingProps
 }) {
   const className = classNames(
     'Button',
-    { [`Button--${STYLES[style || 'DEFAULT']}`]: true },
+    { [`Button--${theme || THEMES['DEFAULT']}`]: true },
     classNameProp
   );
 
