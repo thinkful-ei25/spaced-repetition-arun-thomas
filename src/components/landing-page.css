@@ -1,3 +1,52 @@
-body {
+.LandingPage {
+  padding: 2vw;
+}
+
+.LandingPage_header {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 10vw;
+}
+
+.LandingPage_titles {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   text-align: center;
+}
+
+.LandingPage_title {
+  font-size: var(--modular-1);
+  margin: 1rem 0;
+  /* font-weight: 700; */
+}
+
+.LandingPage_subtitle {
+  font-size: var(--modular-3);
+  margin: 1rem 0;
+}
+
+.LandingPage_imageContainer {
+  flex: 1;
+}
+.LandingPage_image {
+  max-height: 30vh;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .LandingPage_header {
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 10vh;
+  }
+
+  .LandingPage_titles {
+    margin-right: 1rem;
+  }
+
+  .LandingPage_image {
+    max-height: initial;
+  }
 }

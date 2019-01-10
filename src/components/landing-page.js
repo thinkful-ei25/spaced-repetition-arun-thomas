@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './landing-page.css';
 
+import Card from './card';
 import LoginForm from './login-form';
 import RegistrationForm from './registration-form';
 
@@ -13,21 +14,40 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="home">
-      <h2>Welcome to Latency Comparison Numbers!</h2>
-      <p>Learn the latency numbers every programmer should know.</p>
-      <p>
-        Our learning app uses a spaced repetition algorithm that will boost your
-        learning speed.
-      </p>
-      <p>Keep track of your learning history with a built in progress page. </p>
-      <p>Create an account to get started!</p>
+    <main className="LandingPage">
+      <header className="LandingPage_header">
+        <div className="LandingPage_titles">
+          <h1 className="LandingPage_title">Spaced Latency</h1>
+          <p className="LandingPage_subtitle">
+            Learn the latency numbers that every programmer should know
+          </p>
+        </div>
+        <div className="LandingPage_imageContainer">
+          <img
+            src="latency-blocks.png"
+            alt="Latency numbers as blocks"
+            className="LandingPage_image"
+          />
+        </div>
+      </header>
 
-      <Switch>
-        <Route path="/register" component={RegistrationForm} />
-        <Route component={LoginForm} />
-      </Switch>
-    </div>
+      <Card className="LandingPage_features" element="section">
+        <ul className="LandingPage_ul">
+          <li className="LandingPage_feature">
+            Use spaced repetition to boost your learning speed
+          </li>
+          <li className="LandingPage_feature">Track your progress over time</li>
+        </ul>
+      </Card>
+
+      <Card element="section" className="LandingPage_login">
+        <h2>Login to get started</h2>
+        <Switch>
+          <Route path="/register" component={RegistrationForm} />
+          <Route component={LoginForm} />
+        </Switch>
+      </Card>
+    </main>
   );
 }
 
