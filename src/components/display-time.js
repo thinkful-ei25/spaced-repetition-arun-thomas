@@ -6,9 +6,11 @@ export default class DisplayTime extends React.Component {
   
   render() {
     const { createdAt, updatedAt } = this.props;
-    let startTime = moment(createdAt).format('llll');
-    let endTime = moment(updatedAt).format('llll');
-    let elapsed = moment(endTime).diff(startTime, 'minutes')
+    const startMoment = moment(createdAt);
+    const endMoment = moment(updatedAt);
+    let startTime = startMoment.format('llll');
+    let elapsed = endMoment.diff(startMoment, 'minutes');
+    
     return(
       <div>
         <div className="session-start-time">{startTime}</div>

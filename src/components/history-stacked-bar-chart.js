@@ -37,7 +37,6 @@ export default class HistoryStackedBarChart extends React.Component {
 
     return (
       <div>
-        <h2>Horizontal Bar Example</h2>
         <HorizontalBar data={data} options={options}/>
       </div>
     );
