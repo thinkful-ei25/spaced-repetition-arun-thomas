@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
+import Card from './card'
 import requiresLogin from './requires-login';
 import { fetchQuestion, fetchSessionId } from '../actions/question';
 import AnswerFeedback from './answer-feedback';
@@ -21,18 +23,18 @@ export class Dashboard extends React.Component {
         let total = sessionCorrect + sessionIncorrect;
         let percentage = ((sessionCorrect * 100 / total) || 0).toFixed(2);
         return (
-            <div className="dashboard">
+            <main className="Dashboard">
                 <div className='scoreboard'>
                     <span><b>Session Score:</b> {sessionCorrect} / {total}</span> 
                     <span><b>Current Streak:</b> {currentStreak}</span>
                     <span><b>Percent Correct:</b> {percentage}%</span>
                 </div>
-                <div>
+                <Card>
                     <h2>Question:</h2>
                     <p>{this.props.question.text}</p>
-                </div>
-                {feedback ? <AnswerFeedback /> : <AnswerForm />}
-            </div>
+                    {feedback ? <AnswerFeedback /> : <AnswerForm />}
+                </Card>
+            </main>
         );
     }
 }
