@@ -29,9 +29,10 @@ export class Dashboard extends React.Component {
                     <span><b>Current Streak:</b> {currentStreak}</span>
                     <span><b>Percent Correct:</b> {percentage}%</span>
                 </div>
-                <Card>
-                    <h2>Question:</h2>
-                    <p>{this.props.question.text}</p>
+                <Card element="section">
+                    <header class="Dashboard_question">
+                        <h2>{this.props.question.text}</h2>
+                    </header>
                     {feedback ? <AnswerFeedback /> : <AnswerForm />}
                 </Card>
             </main>

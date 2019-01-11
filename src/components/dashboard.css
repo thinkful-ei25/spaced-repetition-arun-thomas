@@ -2,6 +2,11 @@
   padding: 2vw;
 }
 
+.Dashboard_question {
+  text-align: center;
+  font-size: var(--modular-4);
+}
+
 .scoreboard {
   margin-top: 20px;
 }
