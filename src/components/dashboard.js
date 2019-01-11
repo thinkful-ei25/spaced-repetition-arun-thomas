@@ -23,6 +23,8 @@ export class Dashboard extends React.Component {
         const { feedback, sessionCorrect, sessionIncorrect, currentStreak } = this.props;
         return (
             <main className="Dashboard">
+                <h2 className="Dashboard_title">Learn Latency Numbers</h2>
+                <div className="Dashboard_chart_title">Session Progress</div>
                 <section className='Dashboard_scoreboard'>
                     <ProgressChart
                         correct={sessionCorrect}

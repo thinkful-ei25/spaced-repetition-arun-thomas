@@ -33,7 +33,7 @@ export default function ProgressChart({ correct, incorrect, className }) {
         {
           stacked: true,
           ticks: { display: false, beginAtZero: true, stepSize: 1 },
-          scaleLabel: { display: false},
+          scaleLabel: { display: true, labelString: 'Total Questions'},
         },
       ],
       yAxes: [{ stacked: true, scaleLabel: { display: false } }],
