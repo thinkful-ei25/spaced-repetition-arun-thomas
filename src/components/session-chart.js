@@ -6,8 +6,6 @@ export default class SessionChart extends React.Component {
   render() {
     
     const { correct, incorrect } = this.props;
-    // let correctLabel = `Correct: ${correct}`;
-    // let incorrectLabel = `Incorrect: ${incorrect}`;
 
     const data = {
       labels: [
