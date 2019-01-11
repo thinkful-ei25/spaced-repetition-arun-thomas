@@ -29,6 +29,7 @@
 
 .LandingPage_imageContainer {
   flex: 1;
+  margin-top: 1rem;
 }
 
 .LandingPage_image {

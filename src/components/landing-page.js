@@ -6,6 +6,7 @@ import './landing-page.css';
 import Card from './card';
 import LoginForm from './login-form';
 import RegistrationForm from './registration-form';
+import { LinkButton } from './button';
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -21,6 +22,7 @@ export function LandingPage(props) {
           <p className="LandingPage_subtitle">
             Learn the latency numbers that every programmer should know
           </p>
+          <LinkButton href="#login-form">Login to get started</LinkButton>
         </div>
         <div className="LandingPage_imageContainer">
           <img
