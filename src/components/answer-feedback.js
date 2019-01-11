@@ -10,7 +10,7 @@ export function AnswerFeedback({ feedback, question, fetchQuestion, previousAnsw
   }
 
   let total = history.correct + history.incorrect;
-  let percentage = (history.correct / total).toFixed(2);
+  let percentage = ((history.correct * 100) / total).toFixed(2);
 
   return (
     <section className="answer-feedback">
