@@ -23,7 +23,7 @@ export class History extends React.Component {
         })
         return (
             <div className="history">
-                <h2 className="history-title">{this.props.username}'s Question History</h2>
+                <h2 className="history-title">Question History</h2>
                 <div className="history-chart-title">Spaced Latency Question Accuracy Chart</div>
                 <HistoryStackedBarChart questionHistory={this.props.questionHistory}/>
                 <div className="history-question-container">

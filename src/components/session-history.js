@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import './session-history.css';
 import { Link } from 'react-router-dom';
@@ -9,31 +9,31 @@ import SessionData from './session-data';
 
 export class SessionHistory extends React.Component {
     componentDidMount() {
-      this.props.dispatch(fetchSessionHistory());
+        this.props.dispatch(fetchSessionHistory());
     }
-    
+
     render() {
-      if (!this.props.sessions) {
-        return null;
-    }
-    const sessionHistory = this.props.sessions.map(session => {
-        return <SessionData key={session.id} {...session} />
-    })
+        if (!this.props.sessions) {
+            return null;
+        }
+        const sessionHistory = this.props.sessions.map(session => {
+            return <SessionData key={session.id} {...session} />
+        })
         return (
             <div className="session-history">
-                <h2 className="session-title">{this.props.username}'s Session History</h2>
+                <h2 className="session-title">Session History</h2>
                 <div>
-                  {sessionHistory}
+                    {sessionHistory}
                 </div>
                 <Link to='/dashboard'>Return to Questions</Link>
             </div>
-            
+
         );
     }
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
+    const { currentUser } = state.auth;
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,

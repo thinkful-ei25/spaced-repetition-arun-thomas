@@ -24,7 +24,7 @@ export class AnswerForm extends React.Component {
           type="text"
           name="useranswer"
           id="useranswer"
-          autocomplete="off"
+          autoComplete="off"
           label="Answer"
           placeholder="Enter answer"
           unit="ns"

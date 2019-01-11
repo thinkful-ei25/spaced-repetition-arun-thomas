@@ -16,12 +16,12 @@ export default class HistoryStackedBarChart extends React.Component {
     
     const questionHistoryCorrectData = [];
     questionHistory.map(question => {
-      questionHistoryCorrectData.push(question.history.correct);
+      return questionHistoryCorrectData.push(question.history.correct);
     })
 
     const questionHistoryIncorrectData = [];
     questionHistory.map(question => {
-      questionHistoryIncorrectData.push(question.history.incorrect);
+      return questionHistoryIncorrectData.push(question.history.incorrect);
     })
 
     window.onload = function() {
@@ -34,12 +34,12 @@ export default class HistoryStackedBarChart extends React.Component {
             {
               label: 'Correct',
               data: questionHistoryCorrectData,
-              backgroundColor: '#D6E9C6',
+              backgroundColor: '#6FEE95',
             },
             {
               label: 'Incorrect',
               data: questionHistoryIncorrectData,
-              backgroundColor: '#EBCCD1',
+              backgroundColor: '#FF6278',
             }
           ]
         },
