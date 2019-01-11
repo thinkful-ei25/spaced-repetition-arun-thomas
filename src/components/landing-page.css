@@ -38,6 +38,24 @@
   margin: 0 auto;
 }
 
+.LandingPage_features {
+  max-width: 80vw;
+  margin: 1em auto;
+}
+
+.LandingPage_ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.LandingPage_feature {
+  font-size: var(--modular-4);
+  text-align: center;
+  margin: 0.5em 0;
+}
+
 @media only screen and (min-width: 600px) {
   .LandingPage_header {
     flex-flow: row nowrap;
@@ -52,4 +70,9 @@
     max-height: initial;
     max-width: 100%;
   }
+
+  .LandingPage_feature {
+    margin: 1em 2em;
+  }
+
 }
