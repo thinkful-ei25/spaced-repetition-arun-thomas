@@ -30,27 +30,27 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
+                    label="Username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     id="password"
+                    label="Password"
                     validate={[required, nonEmpty]}
                 />
                 <Button disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </Button>
+                <Link to="/register">Register</Link>
             </form>
-            <Link to="/register">Register</Link>
             </div>
         );
     }

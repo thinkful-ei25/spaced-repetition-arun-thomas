@@ -55,8 +55,8 @@ export class RegistrationForm extends React.Component {
           <Button theme={buttonThemes.SUCCESS} type="submit" disabled={this.props.pristine || this.props.submitting}>
             Register
           </Button>
+          <Link to="/">Login</Link>
         </form>
-        <Link to="/">Login</Link>
       </div>
     );
   }
