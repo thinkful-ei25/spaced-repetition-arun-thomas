@@ -30,7 +30,7 @@ export class Dashboard extends React.Component {
                     <span><b>Percent Correct:</b> {percentage}%</span>
                 </div>
                 <Card element="section">
-                    <header class="Dashboard_question">
+                    <header className="Dashboard_question">
                         <h2>{this.props.question.text}</h2>
                     </header>
                     {feedback ? <AnswerFeedback /> : <AnswerForm />}
