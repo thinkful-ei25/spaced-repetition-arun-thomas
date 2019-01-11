@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm, focus } from 'redux-form';
 
 import './login-form.css';
-import Button, { THEMES as buttonThemes } from './button';
+import Button, { LinkButton, THEMES as buttonThemes } from './button';
 import Input from './input';
 import statelessWrapper from './stateless-wrapper';
 import { login } from '../actions/auth';
@@ -54,7 +54,7 @@ export class LoginForm extends React.Component {
           >
             Log in
           </Button>
-          <Link to="/register">Register</Link>
+          <LinkButton component={Link} to="/register">Register</LinkButton>
         </div>
       </form>
     );

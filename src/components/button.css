@@ -53,3 +53,7 @@
   background: var(--color-success-strong);
   border-color: var(--color-success-strong);
 }
+
+.LinkButton {
+  text-decoration: none;
+}

@@ -18,7 +18,7 @@ export default function Button({
 }) {
   const className = classNames(
     'Button',
-    `Button--${theme|| THEMES.DEFAULT}`,
+    `Button--${theme || THEMES.DEFAULT}`,
     classNameProp
   );
 
@@ -28,3 +28,28 @@ export default function Button({
     </button>
   );
 }
+
+export function LinkButton({
+  children,
+  className,
+  component: Component,
+  theme,
+  ...remainingProps
+}) {
+  const classes = classNames(
+    'LinkButton',
+    'Button',
+    `Button--${theme || THEMES.DEFAULT}`,
+    className
+  );
+
+  return (
+    <Component {...remainingProps} className={classes}>
+      {children}
+    </Component>
+  );
+}
+
+LinkButton.defaultProps = {
+  component: 'a',
+};
