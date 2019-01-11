@@ -18,7 +18,7 @@ export default function Button({
 }) {
   const className = classNames(
     'Button',
-    { [`Button--${theme || THEMES['DEFAULT']}`]: true },
+    `Button--${theme|| THEMES.DEFAULT}`,
     classNameProp
   );
 

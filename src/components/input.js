@@ -1,4 +1,11 @@
+import classNames from 'classnames';
 import React from 'react';
+
+import './input.css';
+
+const THEMES = {
+  DEFAULT: 'default',
+};
 
 export default class Input extends React.Component {
   componentDidUpdate(prevProps) {
@@ -8,27 +15,51 @@ export default class Input extends React.Component {
   }
 
   render() {
+    const { className, theme, input, type } = this.props;
     let error;
     if (this.props.meta.touched && this.props.meta.error) {
-      error = <div className="form-error">{this.props.meta.error}</div>;
+      const errorClasses = classNames(
+        'Input_error',
+        `Input_error--${theme || THEMES.DEFAULT}`
+      );
+      error = <div className={errorClasses}>{this.props.meta.error}</div>;
     }
 
     let warning;
     if (this.props.meta.touched && this.props.meta.warning) {
-      warning = <div className="form-warning">{this.props.meta.warning}</div>;
+      const warningClasses = classNames(
+        'Input_warning',
+        `Input_warning--${theme || THEMES.DEFAULT}`
+      );
+      warning = <div className={warningClasses}>{this.props.meta.warning}</div>;
     }
 
+    const divClasses = classNames(
+      'Input',
+      `Input--${theme || THEMES.DEFAULT}`,
+      className
+    );
+    const labelClasses = classNames(
+      'Input_label',
+      `Input_label--${theme || THEMES.DEFAULT}`
+    );
+    const inputClasses = classNames(
+      'Input_input',
+      `Input_input--${theme || THEMES.DEFAULT}`
+    );
+
     return (
-      <div className="form-input">
-        <label htmlFor={this.props.input.name}>
+      <div className={divClasses}>
+        <label htmlFor={this.props.input.name} className={labelClasses}>
           {this.props.label}
           {error}
           {warning}
         </label>
         <input
-          {...this.props.input}
-          id={this.props.input.name}
-          type={this.props.type}
+          {...input}
+          id={input.name}
+          type={type}
+          className={inputClasses}
           ref={(input) => (this.input = input)}
         />
       </div>
