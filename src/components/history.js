@@ -32,8 +32,8 @@ export class History extends React.Component {
                     </div>
                     {questionHistory}
                 </div>
-                <div className="history-link-to-dashboard">
-                    <Link to='/dashboard'>Return to Questions</Link>
+                <div className="history-link-container">
+                    <Link className="history-link-to-dashboard" to='/dashboard'>Return to Questions</Link>
                 </div>
             </div>
 

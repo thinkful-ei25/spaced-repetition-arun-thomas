@@ -33,6 +33,12 @@
   margin-right: 90px;
 }
 
-.history-link-to-dashboard {
+.history-link-container {
   text-align: center;
+}
+
+.history-link-to-dashboard {
+  font-size: var(--modular-4);
+  font-weight: bold;
+  text-decoration: none;
 }

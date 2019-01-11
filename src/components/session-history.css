@@ -9,3 +9,10 @@
   margin-bottom: 40px;
   font-weight: bold;
 }
+
+.session-history-to-dashboard {
+  font-size: var(--modular-4);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}

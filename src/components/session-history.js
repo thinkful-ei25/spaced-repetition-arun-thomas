@@ -25,7 +25,7 @@ export class SessionHistory extends React.Component {
                 <div>
                     {sessionHistory}
                 </div>
-                <Link to='/dashboard'>Return to Questions</Link>
+                <Link className="session-history-to-dashboard" to='/dashboard'>Return to Questions</Link>
             </div>
 
         );
