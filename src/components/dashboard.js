@@ -6,6 +6,7 @@ import requiresLogin from './requires-login';
 import { fetchQuestion, fetchSessionId } from '../actions/question';
 import AnswerFeedback from './answer-feedback';
 import AnswerForm from './answer-form';
+import ProgressChart from './progress-chart';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -20,15 +21,20 @@ export class Dashboard extends React.Component {
 
     render() {
         const { feedback, sessionCorrect, sessionIncorrect, currentStreak } = this.props;
-        let total = sessionCorrect + sessionIncorrect;
-        let percentage = ((sessionCorrect * 100 / total) || 0).toFixed(2);
         return (
             <main className="Dashboard">
-                <div className='scoreboard'>
-                    <span><b>Session Score:</b> {sessionCorrect} / {total}</span> 
-                    <span><b>Current Streak:</b> {currentStreak}</span>
-                    <span><b>Percent Correct:</b> {percentage}%</span>
-                </div>
+                <section className='Dashboard_scoreboard'>
+                    <ProgressChart
+                        correct={sessionCorrect}
+                        incorrect={sessionIncorrect}
+                        className="Dashboard_scoreChart"
+                    />
+                    {currentStreak > 2 && (
+                        <p className="Dashboard_streak">
+                            You're on a roll! You've gotten <span className="Dashboard_streakInfo">{currentStreak}</span> correct in a row
+                        </p>
+                    )}
+                </section>
                 <Card element="section">
                     <header className="Dashboard_question">
                         <h2>{this.props.question.text}</h2>

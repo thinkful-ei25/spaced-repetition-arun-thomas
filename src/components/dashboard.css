@@ -7,6 +7,21 @@
   font-size: var(--modular-4);
 }
 
+.Dashboard_scoreChart {
+  margin: 0 auto;
+  width: 300px;
+}
+
+.Dashboard_streak {
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.Dashboard_streakInfo {
+  font-weight: 700;
+}
+
 .scoreboard {
   margin-top: 20px;
 }
