@@ -1,5 +1,5 @@
 .history {
-  max-width: 625px;
+  max-width: 900px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -12,8 +12,25 @@
   text-align: center;
 }
 
+.history-chart-title {
+  font-size: var(--modular-4);
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.question-list-title {
+  font-size: var(--modular-4);
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .history-question-container {
+  margin-top: 50px;
   margin-bottom: 50px;
+  margin-left: 90px;
+  margin-right: 90px;
 }
 
 .history-link-to-dashboard {

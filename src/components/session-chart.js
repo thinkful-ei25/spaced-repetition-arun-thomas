@@ -17,12 +17,12 @@ export default class SessionChart extends React.Component {
       datasets: [{
         data: [correct, incorrect],
         backgroundColor: [
-          '#44bba4',
-          '#e94f37',
+          '#D6E9C6',
+          '#EBCCD1',
         ],
         hoverBackgroundColor: [
-          '#44bba4',
-          '#e94f37',
+          '#D6E9C6',
+          '#EBCCD1',
         ]
       }]
     };

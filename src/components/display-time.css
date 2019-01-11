@@ -1,4 +1,5 @@
 .session-start-time {
-  font-size: var(--modular-3);
+  font-size: var(--modular-4);
+  font-weight: bold;
   margin-bottom: 10px;
 }
