@@ -20,6 +20,7 @@ export function HeaderBar({ logout, user }) {
           src="logo-light.png"
           alt="Spaced Latency Logo"
           className="HeaderBar_logo"
+          title="Spaced Latency"
         />
       </Link>
 
