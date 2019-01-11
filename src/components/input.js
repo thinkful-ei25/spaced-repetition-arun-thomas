@@ -3,8 +3,9 @@ import React from 'react';
 
 import './input.css';
 
-const THEMES = {
+export const THEMES = {
   DEFAULT: 'default',
+  ANSWER: 'answer',
 };
 
 export default class Input extends React.Component {
@@ -15,7 +16,7 @@ export default class Input extends React.Component {
   }
 
   render() {
-    const { className, theme, input, type, label } = this.props;
+    const { className, theme, input, type, label, unit, ...remainingProps } = this.props;
     let error;
     if (this.props.meta.touched && this.props.meta.error) {
       const errorClasses = classNames(
@@ -62,7 +63,9 @@ export default class Input extends React.Component {
           className={inputClasses}
           ref={(input) => (this.input = input)}
           placeholder={label}
+          {...remainingProps}
         />
+        {unit}
         {error}
         {warning}
       </div>

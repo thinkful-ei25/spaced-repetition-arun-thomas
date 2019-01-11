@@ -1,3 +1,7 @@
+.Input_input {
+  display: block;
+}
+
 .Input_input,
 .Input_input::placeholder {
   font-family: var(--font-family);
@@ -22,7 +26,8 @@
   color: var(--color-warning-strong);
 }
 
-.Input_label--default {
+.Input_label--default,
+.Input_label--answer {
   position: absolute !important;
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
@@ -39,7 +44,6 @@
 }
 
 .Input_input--default {
-  display: block;
   outline: none;
   background: inherit;
   border: none;
@@ -60,4 +64,20 @@
 .Input_input--default--warning,
 .Input_input--default--warning:focus {
   border-color: var(--color-warning);
+}
+
+.Input_label--answer {
+  display: block;
+}
+
+.Input_input--answer {
+  display: inline-block;
+  background: var(--color-beige);
+  border: none;
+  width: 20ex;
+  text-align: center;
+}
+
+.Input_input--answer--error {
+  border: solid 1px var(--color-danger);
 }
