@@ -42,7 +42,6 @@
   .LandingPage_header {
     flex-flow: row nowrap;
     align-items: center;
-    margin-top: 10vh;
   }
 
   .LandingPage_titles {
