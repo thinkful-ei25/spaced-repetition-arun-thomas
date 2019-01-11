@@ -27,7 +27,9 @@ export class RegistrationForm extends React.Component {
       <form
         className="RegistrationForm"
         onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
+        id="registration-form"
       >
+        <legend className="RegistrationForm_legend">Register as a new user</legend>
         <Field component={Input} type="text" name="firstName" label="First name" />
         <Field component={Input} type="text" name="lastName" label="Last name" />
         <Field
@@ -52,14 +54,16 @@ export class RegistrationForm extends React.Component {
           validate={[required, nonEmpty, matchesPassword]}
         />
 
-        <Button
-          theme={buttonThemes.SUCCESS}
-          type="submit"
-          disabled={this.props.pristine || this.props.submitting}
-        >
-          Register
-        </Button>
-        <Link to="/">Login</Link>
+        <div className="RegistrationForm_controls">
+          <Button
+            theme={buttonThemes.SUCCESS}
+            type="submit"
+            disabled={this.props.pristine || this.props.submitting}
+          >
+            Register
+          </Button>
+          <Link to="/">Login</Link>
+        </div>
       </form>
     );
   }

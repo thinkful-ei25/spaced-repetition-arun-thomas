@@ -1,0 +1,24 @@
+.RegistrationForm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.RegistrationForm_controls {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.RegistrationForm_legend {
+  font-size: var(--modular-4);
+}
+
+@media only screen and (min-width: 600px) {
+  .RegistrationForm_controls {
+    flex-flow: row-reverse nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
