@@ -2,6 +2,20 @@
   padding: 2vw;
 }
 
+.Dashboard_title {
+  font-size: var(--modular-1);
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.Dashboard_chart_title {
+  font-size: var(--modular-4);
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .Dashboard_question {
   text-align: center;
   font-size: var(--modular-4);
