@@ -16,3 +16,8 @@
   text-align: center;
   text-decoration: none;
 }
+
+.session-history-charts {
+  max-width: 1000px;
+  margin: auto;
+}

@@ -22,7 +22,7 @@ export class SessionHistory extends React.Component {
         return (
             <div className="session-history">
                 <h2 className="session-title">Session History</h2>
-                <div>
+                <div className="session-history-charts">
                     {sessionHistory}
                 </div>
                 <Link className="session-history-to-dashboard" to='/dashboard'>Return to Questions</Link>
