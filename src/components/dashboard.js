@@ -23,13 +23,17 @@ export class Dashboard extends React.Component {
         const { feedback, sessionCorrect, sessionIncorrect, currentStreak } = this.props;
         return (
             <main className="Dashboard">
-                <section className='scoreboard'>
+                <section className='Dashboard_scoreboard'>
                     <ProgressChart
                         correct={sessionCorrect}
                         incorrect={sessionIncorrect}
                         className="Dashboard_scoreChart"
                     />
-                    <span><b>Current Streak:</b> {currentStreak}</span>
+                    {currentStreak > 2 && (
+                        <p className="Dashboard_streak">
+                            You're on a roll! You've gotten <span className="Dashboard_streakInfo">{currentStreak}</span> correct in a row
+                        </p>
+                    )}
                 </section>
                 <Card element="section">
                     <header className="Dashboard_question">
