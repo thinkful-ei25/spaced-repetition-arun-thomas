@@ -81,3 +81,12 @@
 .Input_input--answer--error {
   border: solid 1px var(--color-danger);
 }
+
+.Input_input--answer--warning {
+  border: solid 1px var(--color-warning);
+}
+
+.Input_error--answer,
+.Input_warning--answer {
+  text-align: center;
+}
