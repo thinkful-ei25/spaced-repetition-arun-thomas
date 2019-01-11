@@ -10,7 +10,7 @@ export default class SessionData extends React.Component {
     const percentage = ((correct * 100 / total) || 0).toFixed(2);
     return(
       <div className="session-data">
-        <DisplayTime className='session-time' createdAt={createdAt} updatedAt={updatedAt}/>
+        <DisplayTime className="session-time" createdAt={createdAt} updatedAt={updatedAt}/>
         <SessionChart correct={correct} incorrect={incorrect}/>
       </div>
     );

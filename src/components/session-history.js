@@ -21,7 +21,7 @@ export class SessionHistory extends React.Component {
     })
         return (
             <div className="session-history">
-                <h2>{this.props.username}'s Session History</h2>
+                <h2 className="session-title">{this.props.username}'s Session History</h2>
                 <div>
                   {sessionHistory}
                 </div>

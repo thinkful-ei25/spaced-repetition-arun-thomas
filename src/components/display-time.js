@@ -1,4 +1,5 @@
 import React from 'react';
+import './display-time.css';
 let moment = require('moment');
 
 export default class DisplayTime extends React.Component {
@@ -10,7 +11,7 @@ export default class DisplayTime extends React.Component {
     let elapsed = moment(endTime).diff(startTime, 'minutes')
     return(
       <div>
-        <h3>{startTime}</h3>
+        <div className="session-start-time">{startTime}</div>
         <div>Session Length: {elapsed} minutes</div>
       </div>
     );

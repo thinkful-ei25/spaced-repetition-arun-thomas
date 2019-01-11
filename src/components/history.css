@@ -1,4 +1,21 @@
 .history {
   max-width: 625px;
   margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.history-title {
+  font-size: var(--modular-1);
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.history-question-container {
+  margin-bottom: 50px;
+}
+
+.history-link-to-dashboard {
+  text-align: center;
 }

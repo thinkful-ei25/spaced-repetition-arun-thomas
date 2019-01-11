@@ -20,11 +20,13 @@ export class History extends React.Component {
         })
         return (
             <div className="history">
-                <h2>{this.props.username}'s Question History</h2>
-                <div>
+                <h2 className="history-title">{this.props.username}'s Question History</h2>
+                <div className="history-question-container">
                     {questionHistory}
                 </div>
-                <Link to='/dashboard'>Return to Questions</Link>
+                <div className="history-link-to-dashboard">
+                    <Link to='/dashboard'>Return to Questions</Link>
+                </div>
             </div>
 
         );
