@@ -30,7 +30,12 @@ export class AnswerForm extends React.Component {
           unit="ns"
           validate={[required, nonEmpty]}
         />
-        <Button disabled={this.props.pristine || this.props.submitting}>Submit</Button>
+        <Button
+          disabled={this.props.pristine || this.props.submitting}
+          className="AnswerForm_submitButton"
+        >
+          Submit
+        </Button>
       </form>
     );
   }
