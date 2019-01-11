@@ -33,14 +33,14 @@ export function LandingPage(props) {
         </div>
       </header>
 
-      <Card className="LandingPage_features" element="section">
+      <section className="LandingPage_features">
         <ul className="LandingPage_ul">
           <li className="LandingPage_feature">
             Use spaced repetition to boost your learning speed
           </li>
           <li className="LandingPage_feature">Track your progress over time</li>
         </ul>
-      </Card>
+      </section>
 
       <Card element="section" className="LandingPage_login">
         <Switch>
