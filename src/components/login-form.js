@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm, focus } from 'redux-form';
 
-import Button from './button';
+import './login-form.css';
+import Button, { THEMES as buttonThemes } from './button';
 import Input from './input';
 import statelessWrapper from './stateless-wrapper';
 import { login } from '../actions/auth';
@@ -17,40 +18,44 @@ export class LoginForm extends React.Component {
     let error;
     if (this.props.error) {
       error = (
-        <div className="form-error" aria-live="polite">
+        <div className="LoginForm_error" aria-live="polite">
           {this.props.error}
         </div>
       );
     }
     return (
-      <div className="LoginForm">
-        <form
-          className="LoginForm_form"
-          onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
-        >
-          {error}
-          <Field
-            component={Input}
-            type="text"
-            name="username"
-            id="username"
-            label="Username"
-            validate={[required, nonEmpty]}
-          />
-          <Field
-            component={Input}
-            type="password"
-            name="password"
-            id="password"
-            label="Password"
-            validate={[required, nonEmpty]}
-          />
-          <Button disabled={this.props.pristine || this.props.submitting}>
+      <form
+        className="LoginForm"
+        onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}
+      >
+        {error}
+        <legend className="LoginForm_legend">Login to start learning</legend>
+        <Field
+          component={Input}
+          type="text"
+          name="username"
+          id="username"
+          label="Username"
+          validate={[required, nonEmpty]}
+        />
+        <Field
+          component={Input}
+          type="password"
+          name="password"
+          id="password"
+          label="Password"
+          validate={[required, nonEmpty]}
+        />
+        <div className="LoginForm_controls">
+          <Button
+            disabled={this.props.pristine || this.props.submitting}
+            theme={buttonThemes.SUCCESS}
+          >
             Log in
           </Button>
           <Link to="/register">Register</Link>
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

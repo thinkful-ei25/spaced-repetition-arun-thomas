@@ -41,7 +41,6 @@ export function LandingPage(props) {
       </Card>
 
       <Card element="section" className="LandingPage_login">
-        <h2>Login to get started</h2>
         <Switch>
           <Route path="/register" component={RegistrationForm} />
           <Route component={LoginForm} />

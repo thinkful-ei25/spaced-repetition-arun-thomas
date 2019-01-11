@@ -1,0 +1,29 @@
+.LoginForm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.LoginForm_error {
+  color: var(--color-danger-strong);
+  font-weight: 700;
+}
+
+.LoginForm_controls {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginForm_legend {
+  font-size: var(--modular-4);
+}
+
+@media only screen and (min-width: 600px) {
+  .LoginForm_controls {
+    flex-flow: row-reverse nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
