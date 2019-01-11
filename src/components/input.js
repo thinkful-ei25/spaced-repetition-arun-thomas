@@ -15,7 +15,7 @@ export default class Input extends React.Component {
   }
 
   render() {
-    const { className, theme, input, type } = this.props;
+    const { className, theme, input, type, label } = this.props;
     let error;
     if (this.props.meta.touched && this.props.meta.error) {
       const errorClasses = classNames(
@@ -50,10 +50,8 @@ export default class Input extends React.Component {
 
     return (
       <div className={divClasses}>
-        <label htmlFor={this.props.input.name} className={labelClasses}>
-          {this.props.label}
-          {error}
-          {warning}
+        <label htmlFor={input.name} className={labelClasses}>
+          {label}
         </label>
         <input
           {...input}
@@ -61,7 +59,10 @@ export default class Input extends React.Component {
           type={type}
           className={inputClasses}
           ref={(input) => (this.input = input)}
+          placeholder={label}
         />
+        {error}
+        {warning}
       </div>
     );
   }

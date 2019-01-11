@@ -1,0 +1,53 @@
+.Input_input,
+.Input_input::placeholder {
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+
+.Input_input::placeholder {
+  font-weight: 300;
+}
+
+.Input_error,
+.Input_warning {
+  font-weight: 700;
+  margin-top: 1ex;
+}
+
+.Input_error {
+  color: var(--color-danger-strong);
+}
+
+.Input_warning {
+  color: var(--color-warning-strong);
+}
+
+.Input_label--default {
+  position: absolute !important;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.Input--default {
+  margin-top: 1em;
+}
+
+.Input_input--default {
+  display: block;
+  outline: none;
+  background: inherit;
+  border: none;
+  border-bottom: solid 0.1rem var(--color-dark);
+  width: 20em;
+}
+
+.Input_input--default:focus {
+  transition: 0.3s;
+  border-color: var(--color-primary-strong);
+}
