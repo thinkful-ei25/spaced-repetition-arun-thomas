@@ -1,6 +1,11 @@
 import React from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 
+const COLORS = {
+  correct: '#44bba4',
+  incorrect: '#e94f37',
+};
+
 export default class HistoryStackedBarChart extends React.Component {
   render() {
 
@@ -18,12 +23,12 @@ export default class HistoryStackedBarChart extends React.Component {
         {
           label: 'Correct',
           data: questionHistoryCorrectData,
-          backgroundColor: '#6FEE95',
+          backgroundColor: COLORS.correct,
         },
         {
           label: 'Incorrect',
           data: questionHistoryIncorrectData,
-          backgroundColor: '#FF6278',
+          backgroundColor: COLORS.incorrect,
         }
       ]
     };

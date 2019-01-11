@@ -2,6 +2,11 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import './session-chart.css';
 
+const COLORS = {
+  correct: '#44bba4',
+  incorrect: '#e94f37',
+};
+
 export default class SessionChart extends React.Component {
   render() {
     
@@ -15,12 +20,12 @@ export default class SessionChart extends React.Component {
       datasets: [{
         data: [correct, incorrect],
         backgroundColor: [
-          '#6FEE95',
-          '#FF6278',
+          COLORS.correct,
+          COLORS.incorrect,
         ],
         hoverBackgroundColor: [
-          '#6FEE95',
-          '#FF6278',
+          COLORS.correct,
+          COLORS.incorrect,
         ]
       }]
     };
