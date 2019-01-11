@@ -51,3 +51,13 @@
   transition: 0.3s;
   border-color: var(--color-primary-strong);
 }
+
+.Input_input--default--error,
+.Input_input--default--error:focus {
+  border-color: var(--color-danger);
+}
+
+.Input_input--default--warning,
+.Input_input--default--warning:focus {
+  border-color: var(--color-warning);
+}

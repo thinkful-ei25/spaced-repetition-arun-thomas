@@ -45,7 +45,9 @@ export default class Input extends React.Component {
     );
     const inputClasses = classNames(
       'Input_input',
-      `Input_input--${theme || THEMES.DEFAULT}`
+      `Input_input--${theme || THEMES.DEFAULT}`,
+      {[`Input_input--${theme || THEMES.DEFAULT}--error`]: error},
+      {[`Input_input--${theme || THEMES.DEFAULT}--warning`]: warning},
     );
 
     return (
